@@ -48,56 +48,16 @@ public class DrumGameMain extends JFrame implements ActionListener, KeyListener{
 		myLayout();
 	}
 	
-	public void playSoundList(String s) {
-		ArrayList<String> mySounds = new ArrayList();
-		for (int i = 0; i < s.length(); i++) {
-			char c = s.charAt(i);
-			switch (c) {
-
-			case 'b': {
-
-				mySounds.add("bd.wav");
-				break;
-			}
-			case 'h': {
-				mySounds.add("hh.wav");
-				break;
-			}
-			case 'c': {
-				mySounds.add("cp.wav");
-				break;
-			}
-			case 's': {
-				mySounds.add("sd.wav");
-				break;
-			}
-			case 'z': {
-				mySounds.add("siren.wav");
-				break;
-			}
-			}
-		} // end of for loop
-		MySoundPlayer msp = new MySoundPlayer(mySounds, false);
-	}
-
 	private void myLayout() {
 		setLayout(new BorderLayout());
 		JPanel topPanel = new JPanel();
 		topPanel.setLayout(new FlowLayout());
 		pickTextField.setBackground(Color.blue);
-//		topPanel.add(new JLabel(myGamePlayer.getPlayerName()));
 		topPanel.add(new JLabel("Enter b h s c e for (Bass Drum, High Hat, Snare, Hand Clap ,Exit)"));
 		topPanel.add(pickTextField);
-//		topPanel.add(guessTextField);
 		add(topPanel, BorderLayout.NORTH);
 
-//		resultsTextArea.setBackground(Color.lightGray);
-//		resultsTextArea.setEditable(false);
-
-//		add(resultsTextArea, BorderLayout.SOUTH);
 		pickTextField.addActionListener(this);
-//		guessTextField.addActionListener(this);
-//		addWindowListener(new Termination());
 
 		setSize(725, 475);
 		ImageIcon icon = new ImageIcon("808.jpg");
@@ -107,7 +67,6 @@ public class DrumGameMain extends JFrame implements ActionListener, KeyListener{
 		topPanel.add(bgImage);
 
 		pickTextField.addKeyListener(this);
-//		guessTextField.addKeyListener(this);
 		setVisible(true);
 
 	}
