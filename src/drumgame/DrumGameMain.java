@@ -27,22 +27,6 @@ public class DrumGameMain extends JFrame implements ActionListener, KeyListener{
 	ArrayList<String> mySounds;
 	MySoundPlayer msp = new MySoundPlayer(mySounds, false);
 
-	public void playSound(String fileName) {
-		try {
-
-			audioInputStream = AudioSystem.getAudioInputStream(new File(fileName));
-
-			Clip clip = AudioSystem.getClip();
-
-			clip.open(audioInputStream);
-			clip.start();
-		} catch (Exception ex) {
-			System.out.println("Error with playing sound." + ex);
-			ex.printStackTrace();
-		}
-	}
-	
-	
 	public DrumGameMain() {
 		super("Drum Game");
 		myLayout();
