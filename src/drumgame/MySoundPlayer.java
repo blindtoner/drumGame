@@ -84,8 +84,8 @@ public class MySoundPlayer implements Runnable, LineListener{
 	{
 		try {
 			System.out.println("Playing: "+ fileName);
-	        audioInputStream = AudioSystem.getAudioInputStream(
-    				new File(fileName));
+//	        audioInputStream = AudioSystem.getAudioInputStream(new File(fileName));
+	        audioInputStream = AudioSystem.getAudioInputStream(getClass().getResource(fileName));
 	        
 	        clip = AudioSystem.getClip();
 	        
